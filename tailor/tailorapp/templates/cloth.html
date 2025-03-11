@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloth Form</title>
+</head>
+<body>
+    <h2>Cloth Form</h2>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="id_customer">Select Customer:</label>
+        {{ form.customer }}  <!-- Ensure this is included -->
+    
+    <br><br>
+        
+        <!-- Color Picker -->
+        <label for="id_color">Select Color:</label>
+        <input type="color" id="id_color" name="color" value="#000000">
+        
+        <br><br>
+
+        <!-- Type Field -->
+        <label for="id_type">Cloth Type:</label>
+        {{ form.type }}
+        
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

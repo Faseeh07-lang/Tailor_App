@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Invoice</title>
+</head>
+<body>
+
+    <h2>Invoice Details</h2>
+    <p><strong>Customer Name:</strong> {{ customer.name }}</p>
+    <p><strong>Total Bill:</strong> Rs. {{ billing.total_amount }}</p>
+
+    <h3>Select Payment Method</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <label>
+            <input type="radio" name="payment_method" value="cash" required> Cash
+        </label><br>
+        <label>
+            <input type="radio" name="payment_method" value="credit_card" required> Credit Card
+        </label><br>
+        <label>
+            <input type="radio" name="payment_method" value="bank_transfer" required> Bank Transfer
+        </label><br>
+        <label>
+            <input type="radio" name="payment_method" value="mobile_wallet" required> Mobile Wallet
+        </label><br><br>
+
+        <button type="submit">Generate Invoice</button>
+    </form>
+
+</body>
+</html>
